@@ -15,7 +15,7 @@ LifeSteal is a unique Minecraft server feature that introduces a dynamic health 
 ![Life Essence](https://github.com/user-attachments/assets/36e498d9-fdcc-47d2-909d-febcdad34b30)
 
 ## Installation and Usage
-*Place this folder in container/plugins/skript/scripts*
+*Place the 'Lifesteal.sk' folder in container/plugins/skript/scripts*
 
 ## Contact
 For more information or support, you can reach out to me:
