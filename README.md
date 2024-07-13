@@ -16,12 +16,15 @@ LifeSteal is a unique Minecraft server feature that introduces a dynamic health 
 - **Crafting & Withdrawing:** You can obtain Life Essence either by crafting it or by withdrawing your heart.
 ![Life Essence](https://github.com/user-attachments/assets/36e498d9-fdcc-47d2-909d-febcdad34b30)
 
-## Installation and Usage
+![IMG_6984](https://github.com/user-attachments/assets/cfbb7f71-f929-4cce-9730-37009b31aa04)
+
 *Place the 'Lifesteal.sk' folder in container/plugins/skript/scripts*
 
-## Contact
+![IMG_6983](https://github.com/user-attachments/assets/a405b488-c09c-4284-99d9-2d669b469812)
+
 For more information or support, you can reach out to me:
 - Discord: [exterleo](https://discord.gg/zDN2dU8j)
-### Configuration:
+![IMG_6982](https://github.com/user-attachments/assets/4ab96979-9f54-4ae4-b73b-8918cc29591d)
+
 # Edit These In 'Lifesteal.sk'
 ![IMG_6974](https://github.com/user-attachments/assets/20258782-6fe6-447f-9139-582aa0b26f8e)
