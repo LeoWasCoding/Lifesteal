@@ -1,0 +1,105 @@
+options:
+    min-health: 2 # Minimum health a player can have (1 heart)
+    max-hearts: 20 # Maximum hearts a player can have
+    essence-name: "&cEssence of Life"
+    essence-lore: "&6Right click to gain a heart.|&6Everyone will know about this."
+    essence-recipe-id: "essence_of_life"
+
+on load:
+    set {essence} to cookie named {@essence-name} with lore split {@essence-lore} by "|"
+    register new shaped recipe for {essence} using diamond, diamond, diamond, diamond, beacon, netherite ingot, netherite ingot, netherite ingot and netherite ingot with id {@essence-recipe-id}
+
+on consume:
+    if player's tool is {essence}:
+        if max health of player < {@max-hearts} * 1:
+            add 1 to max health of player
+            send "&6You have used an Essence of Life and gained a heart." to player
+            send "&6%player% &6has used an Essence of Life." to all players
+        else:
+            send "&cYou already have the maximum number of hearts."
+
+on death of player:
+    attacker is a player
+    victim is a player
+
+    # Check if victim's health is above minimum before allowing attacker to gain health
+    if max health of victim > {@min-health}:
+        # Gain a heart
+        set {_newMaxHealth} to max health of attacker + 1
+        set max health of attacker to {_newMaxHealth}
+        heal attacker by 2
+        send "&aYou have stolen a heart from &c%victim%&a! Your max health is now &c%{_newMaxHealth}%&a." to attacker
+    
+        # Lose a heart
+        set {_newMaxHealth} to max health of victim - 1
+        if {_newMaxHealth} < {@min-health}:
+            set {_newMaxHealth} to {@min-health} # Prevents player from having less than 1 heart
+        set max health of victim to {_newMaxHealth}
+        send "&cYou have lost a heart to &a%attacker%&c! Your max health is now &c%{_newMaxHealth}%&c." to victim
+
+command /transferheart [<player>] [<integer>]:
+    trigger:
+        if argument 1 or argument 2 is not set:
+            send "&cUsage: /transferheart <player> <number_of_hearts>"
+            stop
+        
+        if player is argument 1:
+            send "&cYou cannot transfer hearts to yourself."
+            stop
+        
+        set {_target} to argument 1
+        set {_hearts} to argument 2
+        set {_healthTransfer} to {_hearts} * 1
+
+        if {_hearts} <= 0:
+            send "&cYou must transfer a positive number of hearts."
+            stop
+        
+        if max health of player < {_healthTransfer} + {@min-health}:
+            send "&cYou do not have enough hearts to transfer."
+            stop
+
+        if {_target} is not online:
+            send "&c%argument 1% is not online."
+            stop
+
+        set {_newMaxHealthSender} to max health of player - {_healthTransfer}
+        set {_newMaxHealthReceiver} to max health of {_target} + {_healthTransfer}
+        
+        if {_newMaxHealthReceiver} > {@max-hearts} * 1:
+            send "&c%argument 1% cannot have more than {@max-hearts} hearts."
+            stop
+
+        set max health of player to {_newMaxHealthSender}
+        set max health of {_target} to {_newMaxHealthReceiver}
+        
+        send "&aYou have transferred &c%{_hearts}% &ahearts to &c%argument 1%&a. Your max health is now &c%{_newMaxHealthSender}%&a." to player
+        send "&aYou have received &c%{_hearts}% &ahearts from &c%player%&a. Your max health is now &c%{_newMaxHealthReceiver}%&a." to {_target}
+
+command /withdrawheart [<integer>]:
+    trigger:
+        if argument 1 is not set:
+            send "&cUsage: /withdrawheart <number_of_hearts>"
+            stop
+        set {_hearts} to argument 1
+        set {_healthTransfer} to {_hearts} * 1
+
+        if {_hearts} <= 0:
+            send "&cYou must withdraw a positive number of hearts."
+            stop
+        
+        if max health of player < {@min-health} + 1:
+            send "&cYou cannot withdraw more hearts. The minimum amount is 1."
+            stop
+        
+        if {_hearts} > 1:
+            send "&cYou can only withdraw one heart at a time because if they stack they wont work."
+            stop
+        
+        set {_essence} to {_hearts} of {essence}
+        if player can hold {_essence}:
+            subtract {_healthTransfer} from max health of player
+            give player {_essence}
+            send "&6You have withdrawn &c%{_hearts}%&6 heart into Essence of Life."
+        else:
+            send "&cNot enough space in your inventory."
