@@ -6,3 +6,4 @@
 
 # Life Essence
 - You Can Get Life Essence By Crafting Or Withdrawing your heart.
+![IMG_6856](https://github.com/user-attachments/assets/36e498d9-fdcc-47d2-909d-febcdad34b30)
