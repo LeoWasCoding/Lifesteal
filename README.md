@@ -21,4 +21,5 @@ LifeSteal is a unique Minecraft server feature that introduces a dynamic health 
 For more information or support, you can reach out to me:
 - Discord: [exterleo](https://discord.gg/zDN2dU8j)
 ### Configuration:
+# Edit These In 'Lifesteal.sk'
 ![IMG_6974](https://github.com/user-attachments/assets/20258782-6fe6-447f-9139-582aa0b26f8e)
