@@ -11,6 +11,9 @@ LifeSteal is a unique Minecraft server feature that introduces a dynamic health 
 - **Minimum Health:** If you die with only 1 heart left, the attacker will not gain any hearts since the minimum health is capped at 1.
 - **No Banning:** You will not get banned if you die with only 1 heart remaining.
 
+![IMG_6986](https://github.com/user-attachments/assets/049e536d-2eb1-41d7-beee-bce7f7db12e0)
+![IMG_6987](https://github.com/user-attachments/assets/7eb58511-eb79-440d-ae86-335cdb07e7ca)
+
 ![IMG_6981](https://github.com/user-attachments/assets/7f3d37d0-75e7-40e3-b182-065710ae220b)
 
 - **Crafting & Withdrawing:** You can obtain Life Essence either by crafting it or by withdrawing your heart.
