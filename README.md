@@ -1,4 +1,4 @@
-![Untitled282_20240713062711](https://github.com/user-attachments/assets/69f3ca69-6f9d-4f96-b87b-a3d66754cb15)
+![Untitled282_20240713062711](https://github.com/user-attachments/assets/d481f889-2437-4791-b39f-918b35476539)
 
 
 LifeSteal is a unique Minecraft server feature that introduces a dynamic health system based on player interactions. This guide outlines the core mechanics and features of LifeSteal and Life Essence.
