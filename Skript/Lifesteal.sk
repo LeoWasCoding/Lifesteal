@@ -14,7 +14,7 @@ on consume:
         if max health of player < {@max-hearts} * 1:
             add 1 to max health of player
             send "&6You have used an Essence of Life and gained a heart." to player
-            send "&6%player% &6has used an Essence of Life." to all players
+            send "&6%player% &6has used an &rEssence &4of &cLife." to all players
         else:
             send "&cYou already have the maximum number of hearts."
 
